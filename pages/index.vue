@@ -1,36 +1,29 @@
-<script setup>
-const editor = useEditor();
-</script>
-
 <template>
-<div class="navbar bg-base-100 shadow-md">
-  <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl">BerryDeck</a>
-  </div>
-</div>
+<Navbar>
+  <NavbarItem>
+    <a href="/" class="btn btn-ghost normal-case text-xl rounded">BerryDeck</a>
+  </NavbarItem>
+  <NavbarFlexItem>
+    <a href="https://github.com/frissyn/berrydeck-client" class="btn btn-ghost normal-case text-md rounded-">
+      <IconsLogoGithub />&nbsp;View on GitHub
+    </a>
+  </NavbarFlexItem>
+</Navbar>
 
-<div class="drawer drawer-mobile drawer-end">
-  <input id="main-drawer" type="checkbox" class="drawer-toggle">
-  <div class="drawer-content flex flex-col items-center justify-center">
-    <div class="hero min-h-screen bg-base-200">
-      <div class="hero-content text-center">
-      <div class="max-w-md">
-        <p class="py-6">coming soon? currently editing? {{ editor.open }}</p>
-        <div class="btn-group">
-          <button class="btn btn-active" @click="!editor.open"><IconsPlus /> New Savefile</button>
-          <button class="btn"><IconsFolder /> Open Savefile</button>
-        </div>
-      </div>
-      </div>
+<Hero>
+  <HeroContent>
+    <h1 class="text-5xl font-bold">BerryDeck</h1>
+    <p class="py-6">Interactive savefile editor and statistics viewer for Celeste.</p>
+    <div class="btn-group w-full">
+      <a class="btn btn-active rounded w-1/2" href="/editor"><IconsPlus /> New Savefile</a>
+      <a class="btn rounded w-1/2" href="/editor"><IconsFolder /> Open Savefile</a>
     </div>
-  </div>
+  </HeroContent>
+</Hero>
 
-  <div class="drawer-side">
-    <label for="main-drawer" class="drawer-overlay"></label>
-    <ul class="menu overflow-y-auto w-80 bg-base-100 text-base-content">
-      <li class="bordered"><a>Sidebar Item 1</a></li>
-      <li><a>Sidebar Item 2</a></li>
-    </ul>
-  </div>
-</div>
+<Footer>
+  <FooterItem>
+    <IconsHashtag /><p>Made with 💜 by <a class="link link-accent">frissyn</a></p>
+  </FooterItem>
+</Footer>
 </template>
